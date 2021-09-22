@@ -30,14 +30,6 @@ module.exports = {
       template: `${PAGES_DIR}/${page}`,
       filename: `./${page.replace(/\.pug/,'.html')}`
     })),
-    new CopyWebpackPlugin({
-      patterns: [
-        {
-          from: `${PATHS.src}/img`,
-          to: 'img',
-        },
-      ],
-    }),
   ],
   module: {
     rules: [
@@ -82,20 +74,6 @@ module.exports = {
       {
         test: /\.pug$/,
         loader: 'pug-loader',
-      },
-      {
-        test: /\.(ttf|woff2?)$/,
-        loader: 'file-loader',
-        options: {
-          name: 'fonts/[name].[ext]',
-        },
-      },
-      {
-        test: /\.(png|jpg|gif|svg)$/,
-        loader: 'file-loader',
-        options: {
-          name: 'img/[name].[ext]',
-        },
       },
     ],
   },
