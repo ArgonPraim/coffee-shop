@@ -83,6 +83,20 @@ module.exports = {
         test: /\.pug$/,
         loader: 'pug-loader',
       },
+      {
+        test: /\.(ttf|woff2?)$/,
+        loader: 'file-loader',
+        options: {
+          name: 'fonts/[name].[ext]',
+        },
+      },
+      {
+        test: /\.(png|jpg|gif|svg)$/,
+        loader: 'file-loader',
+        options: {
+          name: 'img/[name].[ext]',
+        },
+      },
     ],
   },
 }

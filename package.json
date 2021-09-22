@@ -14,20 +14,21 @@
   "devDependencies": {
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^9.0.1",
-    "html-webpack-plugin": "^5.3.2",
-    "mini-css-extract-plugin": "^2.3.0",
-    "pug": "^3.0.2",
-    "pug-loader": "^2.4.0",
-    "webpack": "^5.52.1",
-    "webpack-cli": "^4.8.0",
-    "webpack-dev-server": "^3.11.0",
     "css-loader": "^6.2.0",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.3.2",
     "memfs": "^3.2.4",
+    "mini-css-extract-plugin": "^2.3.0",
     "node-sass": "^6.0.1",
     "postcss-loader": "^6.1.1",
     "postcss-preset-env": "^6.7.0",
+    "pug": "^3.0.2",
+    "pug-loader": "^2.4.0",
     "sass-loader": "^12.1.0",
-    "style-loader": "^3.2.1"
+    "style-loader": "^3.2.1",
+    "webpack": "^5.52.1",
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
     "swiper": "^7.0.6"
