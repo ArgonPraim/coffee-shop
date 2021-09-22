@@ -1,0 +1,38 @@
+@import "config/fonts";
+@import "config/templates";
+@import "config/mixins";
+@import 'header';
+@import 'main';
+@import 'footer';
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0 auto;
+  min-width: 380px;
+}
+
+.wrapper {
+  margin: 0 auto;
+
+  @include tablet {
+    width: 768px;
+  }
+
+  @include mobile {
+    width: 380px;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: .3s;
+}
+
+button {
+  cursor: pointer;
+}

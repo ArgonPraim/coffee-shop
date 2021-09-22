@@ -1,0 +1,159 @@
+.goods-shop {
+  @include flex-composition(space-evenly, center);
+  background-color: #E3EBE7;
+  position: relative;
+  margin-top: 64px;
+
+  @include tablet {
+    background-color: white;
+  }
+}
+
+.swiper {
+  width: 1100px;
+
+  @include tablet {
+    width: 650px;
+  }
+
+  @include mobile {
+    width: 380px;
+  }
+}
+
+.swiper-slider {
+  @include flex-composition(center, center);
+  overflow: hidden;
+  min-height: 550px;
+  padding: 0 20px;
+
+  @include tablet {
+    @include flex-column(space-between, center);
+    padding: 0 20px;
+  }
+}
+
+.swiper-list {
+  width: 1100px;
+  @extend %flex-display;
+  flex-wrap: nowrap;
+
+  @include tablet {
+    width: 650px;
+  }
+
+  @include mobile {
+    width: 380px;
+  }
+}
+
+.swiper-slide {
+  @include flex-column(center, center);
+  min-width: 0;
+  flex-shrink: 0;
+  width: 340px;
+  height: 458px;
+  background-color: white;
+  border-radius: 25px;
+  text-align: center;
+  box-shadow: 0 23px 34px rgba(35, 57, 55, 0.17);
+
+  @include mobile {
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    @extend %font-josefin-sans;
+    font-size: 28px;
+    margin: 0;
+  }
+
+  &__text {
+    @extend %font-alegreya-sans;
+    font-size: 19px;
+    line-height: 36px;
+    max-width: 224px;
+  }
+
+  &__order-button {
+    @extend %button-style;
+    @extend %font-josefin-sans;
+    font-size: 20px;
+    width: 235px;
+    height: 54px;
+    border-radius: 5px;
+
+    &:hover {
+      background-color: #3b7973;
+    }
+
+    &:active {
+      transform: scale(.95);
+      background-color: #234f4a;
+    }
+  }
+}
+
+.mobile {
+  display: none;
+
+  @include mobile {
+    display: block;
+  }
+}
+
+.desktop {
+  display: block;
+
+  @include mobile {
+    display: none;
+  }
+}
+
+.swiper-button-prev {
+  position: absolute;
+  top: 238px;
+  left: 119px;
+  background: url("../img/arrow-pagination.svg") no-repeat center;
+  border: none;
+  outline: none;
+  padding: 19px;
+  transition: .3s;
+
+  @media (max-width: 1400px) {
+    display: none;
+  }
+
+  &:hover {
+    transform: scale(1.15);
+  }
+
+  &:active {
+    transform: scale(.95);
+  }
+}
+
+.swiper-button-next {
+  background: url("../img/arrow-pagination.svg") no-repeat center;
+  position: absolute;
+  top: 238px;
+  right: 119px;
+  border: none;
+  outline: none;
+  padding: 19px;
+  transform: rotate(180deg);
+  transition: .3s;
+
+  @media (max-width: 1400px) {
+    display: none;
+  }
+
+  &:hover {
+    transform: scale(1.15) rotate(180deg);
+  }
+
+  &:active {
+    transform: scale(.95) rotate(180deg);
+  }
+}
+

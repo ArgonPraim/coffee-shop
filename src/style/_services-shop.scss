@@ -1,0 +1,235 @@
+.services-shop {
+  @include flex-composition(space-evenly, center);
+  flex-wrap: wrap;
+  max-width: 1400px;
+  margin: 250px auto 100px auto;
+
+  @include tablet {
+    margin: 100px auto 30px auto;
+  }
+}
+
+.cup-coffee {
+  position: relative;
+  width: 380px;
+  height: 287px;
+  background-color: #FAE9E0;
+
+  @include tablet {
+    width: 320px;
+    height: 240px;
+  }
+
+  @include mobile {
+    width: 380px;
+    height: 287px;
+  }
+
+  &::after {
+    content: url("../img/cup-coffee.svg");
+    width: 365px;
+    height: 263px;
+    position: absolute;
+    top: 75px;
+    left: 25px;
+
+    @include tablet {
+      width: 320px;
+      height: 240px;
+      content: '';
+      background: url("../img/cup-coffee.svg") no-repeat 1px 1px;
+      background-size: 320px 230px;
+      top: 0;
+      left: 0;
+    }
+
+    @include mobile {
+      content: url("../img/cup-coffee.svg");
+      background: none;
+      top: -20px;
+      left: 7px;
+    }
+  }
+
+  &__text {
+    position: absolute;
+    top: -20px;
+    left: -45px;
+    @extend %font-cedarville-cursive;
+    font-size: 28px;
+    transform: rotate(270deg);
+
+    @include mobile {
+      display: none;
+    }
+  }
+}
+
+.store-description {
+  @include flex-column(space-evenly, flex-start);
+  max-width: 645px;
+
+  @include tablet {
+    width: 320px;
+    margin-bottom: 30px;
+  }
+
+  @include mobile {
+    max-width: 320px;
+    order: 0;
+  }
+
+  &__title {
+    @extend %font-josefin-sans;
+    font-size: 38px;
+    margin: 30px 0 0 0;
+
+    @include tablet {
+      font-size: 29px;
+    }
+
+    @include mobile {
+      font-size: 38px;
+    }
+  }
+
+  &__description {
+    @extend %font-alegreya-sans;
+    font-size: 19px;
+
+    @include tablet {
+      font-size: 16px;
+    }
+
+    @include mobile {
+      font-size: 19px;
+    }
+  }
+}
+
+.coffee-of-day {
+  @include flex-column(flex-start, flex-start);
+  max-width: 615px;
+  margin-top: 160px;
+
+  @include tablet {
+    margin-top: 0;
+    width: 320px;
+    align-items: center;
+  }
+
+  @include mobile {
+    max-width: 334px;
+    order: 1;
+    margin-top: 30px;
+  }
+
+  &__title {
+    @extend %font-josefin-sans;
+    font-size: 38px;
+    font-weight: bold;
+
+    @include tablet {
+      margin: 0 0 20px 0;
+    }
+
+    @include mobile {
+      text-align: center;
+      font-size: 29px;
+      margin: 30px 0 30px 0;
+    }
+  }
+
+  &__description {
+    @extend %font-alegreya-sans;
+    font-size: 19px;
+    line-height: 36px;
+
+    @include tablet {
+      margin: 0 0 20px 0;
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    @include mobile {
+      font-size: 19px;
+      line-height: 36px;
+    }
+  }
+
+  &__order-button {
+    @extend %button-style;
+    width: 235px;
+    height: 54px;
+    font-size: 20px;
+    border-radius: 5px;
+
+    @include mobile {
+      display: none;
+    }
+
+    &:hover {
+      background-color: #3b7973;
+    }
+
+    &:active {
+      transform: scale(.95);
+      background-color: #234f4a;
+    }
+  }
+}
+
+.coffee-americano {
+  background-color: #E3EBE7;
+  position: relative;
+  width: 410px;
+  height: 276px;
+  margin-top: 160px;
+
+  @include tablet {
+    margin: 80px 0 80px 0;
+    width: 320px;
+    height: 230px;
+  }
+
+  @include mobile {
+    width: 410px;
+    height: 276px;
+    margin: 80px 0 0 0;
+  }
+
+  &::before {
+    content: url("../img/cup-coffee-americano.svg");
+    position: absolute;
+    left: 72px;
+    top: -30px;
+
+    @include tablet {
+      content: '';
+      background: url("../img/cup-coffee-americano.svg") no-repeat 1px 1px;
+      width: 300px;
+      height: 340px;
+      left: 40px;
+      background-size: 250px 270px;
+    }
+
+    @include mobile {
+      left: 70px;
+      background: none;
+      content: url("../img/cup-coffee-americano.svg");
+    }
+  }
+
+  &__text {
+    @extend %font-cedarville-cursive;
+    position: absolute;
+    top: -23px;
+    right: -49px;
+    font-size: 28px;
+    transform: rotate(270deg);
+
+    @include mobile {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,267 @@
+.header {
+  @include flex-composition(space-around, center);
+
+  @include mobile {
+    @include flex-composition(center, center);
+  }
+
+  &__logo-container {
+    font-size: 32px;
+    padding-left: 66px;
+    @extend %font-cedarville-cursive;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 61px;
+    z-index: 1;
+    background: url("../img/header-logo.svg") no-repeat 0 10px;
+  }
+}
+
+.burger-button {
+  display: none;
+  background: url("../img/burger-button.svg") no-repeat center;
+  width: 27px;
+  height: 21px;
+  border: none;
+  outline: none;
+  position: absolute;
+  z-index: 1;
+  top: 50px;
+  margin-right: 300px;
+  transition: .3s;
+
+  @include mobile {
+    display: inherit;
+  }
+}
+
+.burger-button--active {
+  background: url("../img/close.svg") no-repeat center;
+  margin-right: 0;
+  margin-left: 300px;
+}
+
+.header-menu {
+  @include flex-composition(space-evenly, center);
+
+  @include mobile {
+    overflow-y: hidden;
+  }
+
+  &::after {
+    @include mobile {
+      content: url("../img/line-home.svg");
+      position: absolute;
+      bottom: -5px;
+      right: auto;
+      left: auto;
+    }
+  }
+
+  @include tablet {
+    width: 500px;
+  }
+
+  @include mobile {
+    visibility: hidden;
+    height: 0;
+    transition: height .3s, visibility .1s;
+    background-color: white;
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top: 100px;
+    width: 100%;
+    box-shadow: 0 22px 24px -21px #cccccc;
+  }
+
+  &__list {
+    @include flex-composition(space-between, center);
+    width: 644px;
+    list-style: none;
+
+    @include mobile {
+      align-self: flex-start;
+      width: 100%;
+      @include flex-column(flex-start, center);
+      padding: 0;
+      margin-top: 50px;
+    }
+  }
+
+  &__item--mobile {
+    display: none;
+
+    @include mobile {
+      display: block;
+    }
+  }
+
+  &__item {
+    transition: .3s;
+    @include mobile {
+      margin-bottom: 35px;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+      border-bottom: 1px solid;
+    }
+
+    &:active {
+      transform: scale(.95);
+    }
+  }
+
+  &__link {
+    font-size: 16px;
+    @extend %font-josefin-sans;
+    font-weight: bold;
+
+    @include mobile {
+      font-size: 36px;
+      line-height: 36px;
+    }
+  }
+}
+
+.contact-list--active {
+  @include mobile {
+    visibility: visible;
+    height: 455px;
+  }
+}
+
+.contact-button {
+  @extend %button-style;
+  @extend %font-josefin-sans;
+  font-weight: bold;
+  width: 135px;
+  height: 43px;
+  border-radius: 7px;
+  box-shadow: 0 7px 10px rgba(0, 0, 0, 0.1);
+
+  @include tablet {
+    display: none;
+  }
+
+  &:hover {
+    background-color: #3b7370;
+  }
+
+  &:active {
+    background-color: #1a514c;
+    transform: scale(.95);
+  }
+}
+
+.contacts {
+  @include flex-composition(flex-end, center);
+  flex-direction: column-reverse;
+  position: absolute;
+  top: 345px;
+  margin-left: 1087px;
+  z-index: 1;
+
+  @include tablet {
+    @include flex-composition(center, center);
+    margin: 0;
+    width: 500px;
+    top: 580px;
+    left: auto;
+    right: auto;
+    flex-direction: row;
+  }
+
+  @include mobile {
+    top: 470px;
+    width: 100%;
+    right: auto;
+    left: auto;
+  }
+
+  &__text {
+    transform: rotate(270deg);
+    @extend %font-josefin-sans;
+    font-size: 28px;
+
+    @include tablet {
+      transform: rotate(0deg);
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__list {
+    @include flex-composition(space-between, center);
+    flex-direction: column-reverse;
+    padding: 0;
+    list-style: none;
+
+    @include tablet {
+      width: 200px;
+      @include flex-composition(space-evenly);
+      flex-direction: row;
+    }
+
+    @include mobile {
+      display: none;
+      z-index: 2;
+      flex-direction: row;
+      width: 200px;
+    }
+  }
+
+  &__item {
+    width: 32px;
+    height: 32px;
+    position: relative;
+    padding-bottom: 14px;
+
+    @include mobile {
+      width: 45px;
+      height: 45px;
+    }
+  }
+
+  &__link--facebook {
+    background: url("../img/facebook.svg") no-repeat 0 0;
+  }
+
+  &__link--instagram {
+    background: url("../img/instagram.svg") no-repeat 0 0;
+  }
+
+  &__link--twitter {
+    background: url("../img/twitter.svg") no-repeat 0 0;
+  }
+
+  &__link {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-size: 32px 32px;
+    padding: 16px;
+
+    @include mobile {
+      background-size: 45px 45px;
+      padding: 23px;
+    }
+
+    &:hover {
+      transform: scale(1.25);
+    }
+
+    &:active {
+      transform: scale(.95);
+    }
+  }
+}
+
+.list-active {
+  @include mobile {
+    display: flex;
+  }
+}

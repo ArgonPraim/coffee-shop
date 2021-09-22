@@ -1,0 +1,162 @@
+.hero {
+  @include flex-composition(space-evenly);
+  margin-top: 30px;
+
+  @include tablet {
+    @include flex-composition(space-evenly, center);
+  }
+
+  @include mobile {
+    margin-top: 100px;
+  }
+}
+
+.shop-hero {
+  @include flex-column(center, flex-start);
+
+  @include tablet {
+    margin-top: 80px;
+    @include flex-composition(center, center);
+    width: 320px;
+  }
+
+  @include mobile {
+    @include flex-column(center, center);
+  }
+
+  &__text {
+    margin: 0 0 26px 0;
+    @extend %font-cedarville-cursive;
+    font-size: 28px;
+
+    @include tablet {
+      font-size: 21px;
+    }
+
+    @include mobile {
+      font-size: 19px;
+      margin-bottom: 5px;
+    }
+  }
+
+  &__title {
+    margin: 0 0 26px 0;
+    font-style: normal;
+    @extend %font-josefin-sans;
+    font-size: 63px;
+    font-weight: bold;
+    line-height: 63px;
+
+    @include tablet {
+      font-size: 54px;
+    }
+
+    @include mobile {
+      font-size: 48px;
+      line-height: 54px;
+    }
+  }
+
+  &__order-button {
+    @extend %button-style;
+    @extend %font-josefin-sans;
+    font-size: 20px;
+    width: 235px;
+    height: 54px;
+    border-radius: 7px;
+
+    @include tablet {
+      &::after {
+        content: url("../img/white-arrow.svg");
+        padding-left: 35px;
+      }
+    }
+
+    @include mobile {
+      width: 189px;
+      font-size: 16px;
+    }
+
+    &:hover {
+      background-color: #3b7973;
+    }
+
+    &:active {
+      transform: scale(.95);
+      background-color: #234f4a;
+    }
+  }
+}
+
+.hero-logo {
+  @include flex-composition(center, flex-end);
+  margin-right: 90px;
+
+  @include tablet {
+    margin-top: 50px;
+    margin-right: 0;
+  }
+
+  @include mobile {
+    display: none;
+  }
+
+  &__pass-throught {
+    width: 159px;
+    height: 157px;
+    outline: none;
+    border: none;
+    background: #E3EBE7 url("../img/arrow.svg") no-repeat center;
+    opacity: 0.4;
+    transition: color .3s;
+
+    @include tablet {
+      display: none;
+    }
+
+    &:hover {
+      background-color: #d2ddd0;
+    }
+
+    &:active {
+      transition: .15s;
+      transform: scale(.95);
+      background-color: #b1b7b6;
+    }
+  }
+}
+
+.coffee-grinder-container {
+  position: relative;
+  @include flex-composition(center, flex-end);
+  background: #E3EBE7;
+  width: 410px;
+  height: 466px;
+
+  @include tablet {
+    height: 375px;
+    width: 340px;
+  }
+
+  &__text {
+    position: absolute;
+    top: 67px;
+    left: 39px;
+    padding: 188px 0 0 106px;
+    background: url("../img/coffee-grinder.svg") no-repeat 1px 1px;
+    width: 390px;
+    height: 500px;
+    @extend %font-cedarville-cursive;
+    font-size: 72px;
+
+    @include tablet {
+      top: -45px;
+      left: 12px;
+      background-size: 300px 340px;
+      width: 225px;
+      height: 171px;
+      font-size: 60px;
+      background-position: 12px 1px;
+    }
+  }
+}

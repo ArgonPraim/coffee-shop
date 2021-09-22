@@ -1,0 +1,24 @@
+%flex-display {
+  display: flex;
+}
+
+%font-josefin-sans {
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+%font-cedarville-cursive {
+  font-family: 'Cedarville Cursive', sans-serif;
+}
+
+%font-alegreya-sans {
+  font-family: 'Alegreya Sans', sans-serif;
+}
+
+%button-style {
+  transition: .15s;
+  border: none;
+  outline: none;
+  text-align: center;
+  color: white;
+  background-color: #2D635E;
+}

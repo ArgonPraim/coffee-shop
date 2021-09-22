@@ -1,0 +1,25 @@
+@mixin flex-composition($justify: space-between, $align: null) {
+  @extend %flex-display;
+  justify-content: $justify;
+
+  @if $align {
+    align-items: $align;
+  }
+}
+
+@mixin flex-column($justify: space-between, $align: null) {
+  @include flex-composition($justify, $align);
+  flex-direction: column;
+}
+
+@mixin mobile {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: 1200px) {
+    @content;
+  }
+}

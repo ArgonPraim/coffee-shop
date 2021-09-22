@@ -1,0 +1,11 @@
+.footer {
+  margin-top: 114px;
+  @include flex-composition(center, center);
+
+  &__text {
+    text-align: center;
+    @extend %font-alegreya-sans;
+    font-size: 19px;
+    line-height: 36px;
+  }
+}
